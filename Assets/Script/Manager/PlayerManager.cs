@@ -38,4 +38,9 @@ public class PlayerManager : MonoBehaviour
         return isAlive;
     }
 
+    public void SetAlive(bool isAlive)
+    {
+        this.isAlive = isAlive;
+    }
+
 }
