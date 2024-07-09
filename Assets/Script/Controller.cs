@@ -26,7 +26,7 @@ public class Controller : MonoBehaviour
 
          if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(torqueValue);
+            rb.AddTorque(-torqueValue);
         }
     }
 }
