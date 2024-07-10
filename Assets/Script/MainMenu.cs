@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
     public void PlayButton()
     {
         PlayerPrefs.SetInt("StartNewGame", 1);
@@ -14,7 +15,8 @@ public class MainMenu : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("PlayerX"))
         {
-            PlayerPrefs.SetInt("StartNewGame", 0);
+            // PlayerPrefs.SetInt("StartNewGame", 0);
+            Debug.Log("Có dữ liệu lưu");
             SceneManager.LoadScene(1);
         }
         else
@@ -23,15 +25,16 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    //private IEnumerator SetPlayerPosition(Vector3 position)
-    //{
+    // private IEnumerator SetPlayerPosition(Vector3 position)
+    // {
     //    yield return new WaitForEndOfFrame();
     //    GameObject player = GameObject.FindGameObjectWithTag("Player");
     //    if (player != null)
     //    {
     //        player.transform.position = position;
     //    }
-    //}
+    // }
+
     public void QuitGame()
     {
         Application.Quit();

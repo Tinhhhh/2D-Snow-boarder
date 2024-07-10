@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
             rb.AddTorque(-torqueValue);
         }
 
-        // if (Input.GetKeyDown(KeyCode.Space) && IsGround())
-        // {
-        //     rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        // }
+        if (Input.GetKeyDown(KeyCode.Space) && IsGround())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && IsGround())
         {

@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public static bool PauseGame = false;
     public GameObject PauseMenuUI;
     public GameObject PlayerPosition;
+    public static PauseMenu instance;
 
 
     // Update is called once per frame
@@ -62,15 +63,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void LoadPosition()
     {
-        //if (PlayerPrefs.HasKey("PlayerX"))
-        //{
-        //    float x = PlayerPrefs.GetFloat("PlayerX");
-        //    float y = PlayerPrefs.GetFloat("PlayerY");
-        //    float z = PlayerPrefs.GetFloat("PlayerZ");
-        //    float rotation = PlayerPrefs.GetFloat("PlayerRotation");
+        if (PlayerPrefs.HasKey("PlayerX"))
+        {
+           float x = PlayerPrefs.GetFloat("PlayerX");
+           float y = PlayerPrefs.GetFloat("PlayerY");
+           float z = PlayerPrefs.GetFloat("PlayerZ");
+           float rotation = PlayerPrefs.GetFloat("PlayerRotation");
 
-        //    transform.position = new Vector3(x, y, z);
-        //    transform.rotation = Quaternion.Euler(0, 0, rotation);
-        //}
+           transform.position = new Vector3(x, y, z);
+           transform.rotation = Quaternion.Euler(0, 0, rotation);
+        }
     }
 }
