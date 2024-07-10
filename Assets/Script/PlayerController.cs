@@ -29,6 +29,21 @@ public class PlayerController : MonoBehaviour
     void Awake(){
         cc = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+
+        if (PlayerPrefs.HasKey("continue"))
+        {
+            Vector3 playerPos = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+            transform.position = playerPos;
+
+            ScoreManager.instance.score = PlayerPrefs.GetInt("Score");
+
+            PlayerPrefs.DeleteKey("continue");
+            PlayerPrefs.DeleteKey("PlayerX");
+            PlayerPrefs.DeleteKey("PlayerY");
+            PlayerPrefs.DeleteKey("PlayerZ");
+        }
+
+
     }
     void Update()
     {

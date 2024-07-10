@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerX", playerPosition.x);
         PlayerPrefs.SetFloat("PlayerY", playerPosition.y);
         PlayerPrefs.SetFloat("PlayerZ", playerPosition.z);
+        PlayerPrefs.SetInt("Score", ScoreManager.instance.score);
         PlayerPrefs.SetFloat("PlayerRotation", transform.rotation.eulerAngles.z);
         Debug.Log("Saved");
         PlayerPrefs.Save();

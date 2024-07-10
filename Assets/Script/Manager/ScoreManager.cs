@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreDisplay;
     private PlayerManager playerManager;
     public int score;
+    public bool isPlaying = true;
     private void Awake()
     {
         if (!instance)
@@ -33,7 +34,6 @@ public class ScoreManager : MonoBehaviour
         {
             scoreDisplay.text = score.ToString();
         }
-
     }
 
     private void Start()
@@ -45,10 +45,13 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeCoins(int amount)
     {
-        score = Getscore() + amount;
-        if (score <= 0)
+        if (isPlaying)
         {
-            score = 0;
+            score = Getscore() + amount;
+            if (score <= 0)
+            {
+                score = 0;
+            }
         }
     }
 
